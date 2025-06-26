@@ -15,7 +15,7 @@ import streamlit as st
 # Load data
 world = gpd.read_file("ne_10m_admin_0_countries.shp")
 world = world.to_crs(epsg=4326)
-iso_df = pd.read_csv("/backend/ISO Codes.csv")  # Must contain columns: 'Code' and 'Name'
+iso_df = pd.read_csv("ISO Codes.csv")  # Must contain columns: 'Code' and 'Name'
 
 # Merge to add ISO Code to world GeoDataFrame
 world = world.merge(iso_df, left_on="ADMIN", right_on="Name")
