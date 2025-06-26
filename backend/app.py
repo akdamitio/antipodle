@@ -9,7 +9,6 @@ import json
 from shapely.geometry import mapping
 import streamlit as st
 
-@st.cache_data
 
 
 
