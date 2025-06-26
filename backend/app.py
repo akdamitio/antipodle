@@ -13,7 +13,7 @@ import streamlit as st
 
 
 # Load data
-world = gpd.read_file("/backend/ne_10m_admin_0_countries.shp")
+world = gpd.read_file("ne_10m_admin_0_countries.shp")
 world = world.to_crs(epsg=4326)
 iso_df = pd.read_csv("/backend/ISO Codes.csv")  # Must contain columns: 'Code' and 'Name'
 
