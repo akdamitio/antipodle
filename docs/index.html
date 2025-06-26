@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Antipodle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🌐 Antipodle</h1>
+    <div id="origin">
+      <p>Antipode of: <strong id="origin-name">Loading...</strong></p>
+      <img id="origin-svg" src="" alt="Country shape" />
+    </div>
+  </header>
+
+  <main>
+    <div id="guess-section">
+      <input type="text" id="guess-input" placeholder="Guess a country..." autocomplete="off" />
+      <button id="submit-guess">Guess</button>
+    </div>
+    <ul id="guess-history"></ul>
+  </main>
+
+  <div id="result-popup" class="hidden"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
