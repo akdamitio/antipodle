@@ -1,3 +1,4 @@
+
 import geopandas as gpd
 import pandas as pd
 from shapely.geometry import Polygon, MultiPolygon, shape
@@ -13,7 +14,8 @@ import streamlit as st
 
 
 # Load data
-world = gpd.read_file("ne_10m_admin_0_countries.shp").to_crs(epsg=4326)
+world = gpd.read_file("ne_10m_admin_0_countries.shp")
+world = world.to_crs(epsg=4326)
 iso_df = pd.read_csv("ISO Codes.csv")  # Must contain columns: 'Code' and 'Name'
 
 # Merge to add ISO Code to world GeoDataFrame
