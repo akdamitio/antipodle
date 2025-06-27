@@ -8,7 +8,6 @@ import datetime
 import hashlib
 import json
 from shapely.geometry import mapping
-import streamlit as st
 
 
 
@@ -77,6 +76,7 @@ def get_antipodle_data(date: datetime.date = None, mode='normal'):
         "bonus_code": bonus_country["Code"].lower()
     }
 
-st.set_page_config(layout="wide")
-st.markdown("<h1>Backend API for Antipodle</h1>", unsafe_allow_html=True)
-st.json(get_antipodle_data())
+# Write to docs/data
+os.makedirs("docs/data", exist_ok=True)
+with open("docs/data/antipodle.json", "w", encoding="utf-8") as f:
+    json.dump(get_antipodle_data(), f, indent=2)
