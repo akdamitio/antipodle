@@ -1,6 +1,7 @@
 
 import geopandas as gpd
 import pandas as pd
+import numpy as np
 from shapely.geometry import Polygon, MultiPolygon, shape
 from shapely.ops import unary_union
 import datetime
@@ -29,7 +30,7 @@ def get_daily_country_index(date_str, mode='normal'):
 # Antipode transform
 def get_antipode_geometry(geom):
     def flip_coords(coords):
-        return [[(lng + 180) % 360 - 180, -lat] for lng, lat in coords]
+        return [[lng - np.sign(lng)*180, -lat] for lng, lat in coords]
 
     if geom.geom_type == 'Polygon':
         return Polygon(flip_coords(geom.exterior.coords))
