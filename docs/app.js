@@ -7,7 +7,7 @@ async function loadGameData() {
   const res = await fetch('https://ap-backend-dk63bddqmjcm5qwn9ktntp.streamlit.app'); // Or your actual API endpoint
   gameData = await res.json();
 
-  document.getElementById("origin-name").innerText = gameData.origin_name;
+  document.getElementById("origin-name").innerText = "hello" //gameData.origin_name;
   document.getElementById("origin-svg").src = `https://dashboard-assets.teuteuf.fr/data/common/country-shapes/${gameData.origin_code}.svg`;
 }
 
