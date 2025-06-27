@@ -4,7 +4,7 @@ let guessed = false;
 
 // Load game data from backend
 async function loadGameData() {
-  const res = await fetch('https://ap-backend-dk63bddqmjcm5qwn9ktntp.streamlit.app/'); // Or your actual API endpoint
+  const res = await fetch('https://ap-backend-dk63bddqmjcm5qwn9ktntp.streamlit.app'); // Or your actual API endpoint
   gameData = await res.json();
 
   document.getElementById("origin-name").innerText = gameData.origin_name;
