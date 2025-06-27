@@ -24,7 +24,7 @@ jobs:
         pip install geopandas pandas pyogrio
 
     - name: Generate antipodle.json
-      run: python backend/generate_json.py
+      run: python backend/app.py
 
     - name: Commit and push
       run: |
